@@ -1,4 +1,4 @@
-# sobat-payment
+# Store 
 
 To install dependencies:
 

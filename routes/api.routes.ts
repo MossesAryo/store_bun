@@ -1,7 +1,11 @@
 import { Hono } from "hono";
-import { getAllUsers } from "../controllers/example.controller";
+import { getAllCategories } from "../controllers/categories.controller";
+import { getAllproducts } from "../controllers/products.controller";
 const api = new Hono();
 
-api.get("/users", getAllUsers)
-
+api.get("/", (c) => {
+  return c.json({ message: "Hello World!" });
+});
+api.get("/categories", getAllCategories);
+api.get("/products", getAllproducts);
 export default api;
