@@ -1,5 +1,5 @@
 import { bookshelf } from "../config/database";
-import { Categories } from "./categories";
+import { Categories } from "./Categories";
 
 
 export const Products = bookshelf.model("Products", {
