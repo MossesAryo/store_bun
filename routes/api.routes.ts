@@ -9,10 +9,12 @@ api.get("/", (c) => {
   return c.json({ message: "Hello World!" });
 });
 api.get("/categories", categoriesController.getAllCategories);
-api.post("/categories/store",  categoriesController.actions);
-api.post("/categories/update/:id", categoriesController.actions);
+api.post("/categories/action",  categoriesController.actions);
 api.delete("/categories/delete/:id", categoriesController.deleteCategory);
 
 api.get("/products", productsController.getAllproducts);
+api.post("/products/action", productsController.actions);
+api.delete("/products/delete/:id", productsController.actions);
+
 
 export default api;
