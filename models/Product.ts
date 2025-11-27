@@ -8,4 +8,5 @@ export const Products = bookshelf.model("Products", {
      category() {
     return this.belongsTo(Categories, "category_id"); 
    },
+   
 });

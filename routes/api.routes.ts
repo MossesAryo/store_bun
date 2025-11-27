@@ -1,9 +1,17 @@
 import { Hono } from "hono";
 import {CategoriesController} from "../controllers/categories.controller";
 import { ProductsController } from "../controllers/products.controller";
+import { auth } from "hono/utils/basic-auth";
+import AuthController from "../controllers/auth.controller";
+
 const api = new Hono();
 const productsController = new ProductsController();
 const categoriesController = new CategoriesController();
+const authController = new AuthController();  
+
+
+api.post("/login", authController.login);
+api.post("/register", authController.register);
 
 api.get("/", (c) => {
   return c.json({ message: "Hello World!" });
